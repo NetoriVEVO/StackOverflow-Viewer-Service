@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
+🔍 StackOverflow Viewer
+<div align="center">
+https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white
+https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white
+https://img.shields.io/badge/StackOverflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+</div><div align="center"> <img src="https://via.placeholder.com/800x400/2E8B57/FFFFFF?text=StackOverflow+Viewer+App" alt="App Preview" width="600"/>
+🚀 Live Demo | 📖 Documentation | 🐛 Report Bug
 
-Currently, two official plugins are available:
+</div>
+✨ Возможности
+🔎 Умный поиск
+Поиск вопросов по StackOverflow API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Фильтрация результатов по тегам, дате, рейтингу
 
-## Expanding the ESLint configuration
+Автодополнение поисковых запросов
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+История поиска последних запросов
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📊 Таблица результатов
+Сортировка по дате, рейтингу, количеству ответов
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Пагинация и бесконечная прокрутка
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Быстрый просмотр без перехода на страницу
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Экспорт результатов в CSV/JSON
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+👤 Профили пользователей
+Просмотр тем конкретного пользователя
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Статистика активности (вопросы, ответы, репутация)
+
+Список достижений и badges
+
+Графики активности за все время
+
+⚡ Производительность
+Кэширование запросов для быстрого доступа
+
+Виртуализация списков для большой таблицы
+
+Оптимизированные перерисовки React
+
+Оффлайн-режим для просмотра истории
+
+🛠 Технологии
+Frontend: React 18, TypeScript, Vite
+
+State Management: Redux Toolkit, RTK Query
+
+HTTP Client: Axios с интерцепторами
+
+UI Components: Material-UI / Ant Design
+
+Стили: CSS Modules / Styled Components
+
+API: StackExchange API 2.2
+
+Деployment: GitHub Pages
