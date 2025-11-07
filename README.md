@@ -1,62 +1,69 @@
-🔍 StackOverflow Viewer
-<div align="center">
-https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white
-https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white
-https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white
-https://img.shields.io/badge/StackOverflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white
+# 🔍 StackOverflow Viewer
 
-</div><div align="center"> <img src="https://via.placeholder.com/800x400/2E8B57/FFFFFF?text=StackOverflow+Viewer+App" alt="App Preview" width="600"/>
-🚀 Live Demo | 📖 Documentation | 🐛 Report Bug
+<div align="center">
+
+![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
 </div>
-✨ Возможности
-🔎 Умный поиск
-Поиск вопросов по StackOverflow API
 
-Фильтрация результатов по тегам, дате, рейтингу
+<div align="center">
+  
+**Приложение для поиска вопросов на StackOverflow с удобной таблицей результатов и просмотром профилей пользователей**
 
-Автодополнение поисковых запросов
+[🚀 Live Demo](https://hattoriultra.github.io/StackOverflow-Viewer-Service/) |
+</div>
 
-История поиска последних запросов
+## ✨ Возможности
 
-📊 Таблица результатов
-Сортировка по дате, рейтингу, количеству ответов
+### 🔎 **Поиск вопросов**
+- **Расширенный поиск** по StackOverflow API
+- **Фильтрация** по тегам, дате, рейтингу
+- **Автодополнение** поисковых запросов
+- **История поиска** последних запросов
 
-Пагинация и бесконечная прокрутка
+### 📊 **Таблица результатов**
+- **Сортировка** по дате, рейтингу, количеству ответов
+- **Пагинация** и бесконечная прокрутка
+- **Быстрый просмотр** деталей вопроса
+- **Экспорт результатов** в CSV/JSON
 
-Быстрый просмотр без перехода на страницу
+### 👤 **Профили пользователей**
+- **Просмотр всех вопросов** конкретного пользователя
+- **Статистика активности** (вопросы, ответы, репутация)
+- **Список достижений** и бейджей
+- **Графики активности** за все время
 
-Экспорт результатов в CSV/JSON
+## 🛠 Технологии
 
-👤 Профили пользователей
-Просмотр тем конкретного пользователя
+- **Frontend:** React 18+, TypeScript
+- **State Management:** Redux Toolkit, RTK Query
+- **HTTP Client:** Axios с интерцепторами
+- **Роутинг:** React Router
+- **UI Components:** Material-UI / Ant Design
+- **Стили:** CSS Modules
+- **API:** StackExchange API 2.2
+- **Сборка:** Vite
 
-Статистика активности (вопросы, ответы, репутация)
+## 📦 Быстрый старт
 
-Список достижений и badges
+### Установка и запуск
 
-Графики активности за все время
+```bash
+# Клонирование репозитория
+git clone https://github.com/HATTORIULTRA/StackOverflow-Viewer-Service.git
+cd StackOverflow-Viewer-Service
 
-⚡ Производительность
-Кэширование запросов для быстрого доступа
+# Установка зависимостей
+npm install
 
-Виртуализация списков для большой таблицы
+# Запуск development сервера
+npm run dev
 
-Оптимизированные перерисовки React
+# Сборка для продакшена
+npm run build
 
-Оффлайн-режим для просмотра истории
-
-🛠 Технологии
-Frontend: React 18, TypeScript, Vite
-
-State Management: Redux Toolkit, RTK Query
-
-HTTP Client: Axios с интерцепторами
-
-UI Components: Material-UI / Ant Design
-
-Стили: CSS Modules / Styled Components
-
-API: StackExchange API 2.2
-
-Деployment: GitHub Pages
+# Превью собранной версии
+npm run preview
