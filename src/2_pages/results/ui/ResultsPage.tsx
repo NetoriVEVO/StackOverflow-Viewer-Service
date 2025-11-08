@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import { useAppDispatch, useAppSelector } from "@/6_shared/hooks/redux.hooks";
 import { searchQuestions } from "@/4_features/search-form/model/searchSlice";
 import { ResultsTable } from "@/4_features/results-table";
@@ -8,10 +8,9 @@ import { Spinner } from "@/6_shared/components/ui/spinner";
 import { getAuthorPosts } from "@/4_features/quick-view/model/quickViewSlice";
 
 const ResultsPage = () => {
-  const dialogRef = useRef(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const [searchParams] = useSearchParams();
-  const [isOpened, setIsOpened] = useState(false)
   const { questions, isLoading } = useAppSelector((state) => state.search);
   console.log(questions)
   const dispatch = useAppDispatch();
