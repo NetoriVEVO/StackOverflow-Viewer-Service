@@ -9,10 +9,7 @@ import {
 } from "@/6_shared/components/ui/table";
 import type { ResultsTableProps } from "../model/results-table.types";
 
-
 const ResultsTable = ({ data, handleOpenQuick }: ResultsTableProps) => {
-    console.log('таблица перерес')
-  
   return (
     <Table>
       <TableCaption>A list of your search results.</TableCaption>

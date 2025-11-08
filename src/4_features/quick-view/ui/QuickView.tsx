@@ -5,9 +5,8 @@ import { useAppSelector } from "@/6_shared/hooks/redux.hooks";
 
 const QuickView = () => {
   const {authorPosts} = useAppSelector(state => state.quickView)
-  console.log(authorPosts)
   return (
-    <div className="fixed right-4 top-20 w-80 z-50">
+    <div className="fixed right-4 top-20 w-120 z-50">
       <Card className="bg-card border-border shadow-lg">
         <CardHeader className="pb-3">
           <CardTitle className="text-lg font-semibold text-card-foreground">
@@ -16,17 +15,13 @@ const QuickView = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <h4 className="text-sm font-medium text-muted-foreground">Recent Searches</h4>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
-                React
-              </Badge>
-              <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
-                TypeScript
-              </Badge>
-              <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80">
-                JavaScript
-              </Badge>
+            <h4 className="text-sm font-medium text-muted-foreground">Questions</h4>
+            <div className="flex flex-col gap-2">
+              {authorPosts && authorPosts.items.length > 0 ? authorPosts?.items?.map(item => (
+                 <Badge key={item.title} variant="secondary" className="cursor-pointer hover:bg-secondary/80">
+                   {item.title}
+                 </Badge>
+              )) : 'No other questions'}
             </div>
           </div>
           

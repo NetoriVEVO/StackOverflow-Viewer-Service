@@ -12,7 +12,6 @@ const ResultsPage = () => {
 
   const [searchParams] = useSearchParams();
   const { questions, isLoading } = useAppSelector((state) => state.search);
-  console.log(questions)
   const dispatch = useAppDispatch();
 
   const query = searchParams.get("q");

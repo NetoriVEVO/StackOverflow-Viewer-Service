@@ -3,26 +3,35 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { IQuestion, ISearchSlice } from "./search.types";
 
 export const searchQuestions = createAsyncThunk<IQuestion[], string>(
-  "search/searchQuestions",
-  async (query: string, { rejectWithValue }) => {
-    try {
-      const response = await instance.get("/search/advanced", {
-        params: {
-          q: query,
-          site: "stackoverflow",
-        },
-      });
-      console.log(response.data.items);
-      return response.data.items;
-    } catch (error: unknown) {
-      console.error("Search API failed:", error);
-      const errorMessage =
-        error instanceof Error && "response" in error
-          ? (error as any).response?.data?.error_message
-          : "Search failed";
-      return rejectWithValue(errorMessage);
-    }
-  }
+   "search/searchQuestions",
+   async (query: string, { rejectWithValue }) => {
+     try {
+       const response = await instance.get("/search/advanced", {
+         params: {
+           q: query,
+           site: "stackoverflow",
+         },
+       });
+       return response.data.items;
+     } catch (error: unknown) {
+       console.error("Search API failed:", error);
+       let errorMessage = "Search failed";
+       if (error instanceof Error) {
+         const axiosError = error as {
+           response?: {
+             data?: {
+               error_message?: string;
+             };
+           };
+         };
+
+         if (axiosError.response?.data?.error_message) {
+           errorMessage = axiosError.response.data.error_message;
+         }
+       }
+       return rejectWithValue(errorMessage);
+     }
+   }
 );
 
 const initialState: ISearchSlice = {
@@ -31,7 +40,6 @@ const initialState: ISearchSlice = {
   error: null,
 };
 
-// Then, handle actions in your reducers:
 const searchSlice = createSlice({
   name: "search",
   initialState,

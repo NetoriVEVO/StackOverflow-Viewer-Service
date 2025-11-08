@@ -1,25 +1,26 @@
 import { instance } from "@/6_shared/api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import type {IQuickViewSlice} from "@/4_features/quick-view/model/quickViewSlice.types.ts";
 
 export const getAuthorPosts = createAsyncThunk(
-    'quickView/getAuthorPosts',
-    async (id: number) => {
-        try {
-            const res = await instance.get(`/users/${id}/questions`, {
-        params: {
-          site: "stackoverflow",
-        },
-      });
-            console.log(res.data)
-            return res.data;
-        } catch (e) {
-            console.log('cant get posts',e)
-        }
-    }
-)
+   'quickView/getAuthorPosts',
+   async (id: number) => {
+      try {
+         const res = await instance.get(`/users/${id}/questions`, {
+            params: {
+               site: "stackoverflow",
+            },
+         });
+         return res.data;
+      } catch (e) {
+         console.log('cant get posts', e);
+         return null;
+      }
+   }
+);
 
-const initialState = {
-    authorPosts: [],
+const initialState: IQuickViewSlice = {
+    authorPosts: null,
     isOpenedQuickView: false
 }
 
@@ -33,7 +34,5 @@ export const quickViewSlice = createSlice({
         })
     }
 })
-
-export const {} = quickViewSlice.actions;
 
 export default quickViewSlice.reducer;
